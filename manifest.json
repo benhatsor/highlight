@@ -1,18 +1,8 @@
 {
   "background": {
     "scripts": ["main.js"],
-  },
-
-  "browser_action": {
-    "default_icon": {
-      "19": "icon-19.png",
-      "38": "icon-38.png"
-    },
-    "default_title": "Bookmark",
-    "default_popup": "bookmark.html"
-  },
-  "default_locale": "en",
-  "description": "Smart bookmark that saves your place in the page.",
+    "persistent": false
+  }
 
   "icons": {
     "48": "icon.png",
@@ -20,19 +10,7 @@
   },
 
   "manifest_version": 2,
-
   "name": "Bookmark",
-
-  "page_action": {
-    "default_icon": {
-      "19": "icon-19.png",
-      "38": "icon-38.png"
-    },
-    "default_title": "Bookmark",
-    "default_popup": "bookmark.html"
-  },
-
   "permissions": ["bookmark", "activeTab"],
-
   "version": "1.0",
 }
