@@ -19,7 +19,7 @@
 
   "permissions": [
     "bookmark",
-    "*://*",
+    "*://*/*",
     "webNavigation"
   ],
 
