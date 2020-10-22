@@ -6,7 +6,7 @@
   "browser_action": {
     "default_title": "Bookmark",
     "default_popup": "popup.html"
-  }
+  },
 
   "icons": {
     "48": "icon.png",
