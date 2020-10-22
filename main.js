@@ -1,18 +1,8 @@
 browser.webNavigation.onDOMContentLoaded.addListener(function(details) {
-  browser.tabs.executeScript({
+  browser.tabs.executeScript({null,
     code: `(${ scrollInContent })()`
   });
 })
-
-function inContent() {
-  return {
-    success: true,
-    title: document.title,
-    url: window.location.href,
-    scrollPos: window.scrollY || window.pageYOffset
-  };
-}
-
 
 function scrollInContent() {
   var url = new URL(window.location.href);
