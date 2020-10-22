@@ -2,6 +2,11 @@
   "background": {
     "scripts": ["main.js"]
   },
+  
+  "browser_action": {
+    "default_title": "Bookmark",
+    "default_popup": "popup.html"
+  }
 
   "icons": {
     "48": "icon.png",
@@ -10,6 +15,7 @@
 
   "manifest_version": 2,
   "name": "Smart Bookmark",
+  "description": "Smart bookmark that saves your place in the page.",
 
   "permissions": [
     "bookmark",
