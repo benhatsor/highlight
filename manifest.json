@@ -1,7 +1,7 @@
 {
   "background": {
-    "scripts": ["main.js"],
-  }
+    "scripts": ["main.js"]
+  },
 
   "icons": {
     "48": "icon.png",
@@ -14,7 +14,8 @@
   "permissions": [
     "bookmark",
     "*://*",
-    "webNavigation"],
+    "webNavigation"
+  ]
 
   "version": "1.0"
 }
