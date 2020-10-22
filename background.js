@@ -1,4 +1,4 @@
-chrome.webNavigation.onDOMContentLoaded.addListener(function(details) {
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   chrome.tabs.executeScript({
     code: `(${ scrollInContent })()`
   });
