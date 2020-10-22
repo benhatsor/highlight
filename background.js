@@ -1,5 +1,5 @@
-browser.webNavigation.onDOMContentLoaded.addListener(function(details) {
-  browser.tabs.executeScript({
+chrome.webNavigation.onDOMContentLoaded.addListener(function(details) {
+  chrome.tabs.executeScript({
     code: `(${ scrollInContent })()`
   });
 })
