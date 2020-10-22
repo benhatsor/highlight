@@ -1,13 +1,3 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-    chrome.tabs.executeScript({
-    code: `(${ inContent })()`
-  }, ([result] = []) => {
-    if (!chrome.runtime.lastError) {
-      chrome.bookmarks.create({'parentId': bookmarkBar.id, 'title': result.title, 'url': result.url+'?scroll='+scrollPos });
-    }
-  });
-});
-
 browser.webNavigation.onDOMContentLoaded.addListener(function(details) {
   browser.tabs.executeScript({
     code: `(${ scrollInContent })()`
