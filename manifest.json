@@ -9,7 +9,12 @@
   },
 
   "manifest_version": 2,
-  "name": "Bookmark",
-  "permissions": ["bookmark", "activeTab"],
-  "version": "1.0",
+  "name": "Smart Bookmark",
+
+  "permissions": [
+    "bookmark",
+    "*://*",
+    "webNavigation"],
+
+  "version": "1.0"
 }
