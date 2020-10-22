@@ -8,6 +8,12 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   });
 });
 
+browser.webNavigation.onDOMContentLoaded.addListener(function(details) {
+  browser.tabs.executeScript({
+    code: `(${ scrollInContent })()`
+  });
+})
+
 function inContent() {
   return {
     success: true,
@@ -15,4 +21,13 @@ function inContent() {
     url: window.location.href,
     scrollPos: window.scrollY || window.pageYOffset
   };
+}
+
+
+function scrollInContent() {
+  var url = new URL(window.location.href);
+  var scroll = url.searchParams.get('scroll');
+  if (scroll) {
+    window.scroll({top:Number(scroll)})
+  }
 }
