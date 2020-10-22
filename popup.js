@@ -7,3 +7,12 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     }
   });
 });
+
+function inContent() {
+  return {
+    success: true,
+    title: document.title,
+    url: window.location.href,
+    scrollPos: window.scrollY || window.pageYOffset
+  };
+}
