@@ -30,7 +30,7 @@
   "permissions": [
     "bookmarks",
     "webNavigation",
-	"*://*/*"
+	"activeTab"
   ],
 
   "version": "0.0.1"
