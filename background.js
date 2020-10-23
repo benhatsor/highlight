@@ -11,7 +11,7 @@ chrome.tabs.onActivated.addListener(function() {
 function scrollInContent() {
   var hash = window.location.hash.replace('#', '');
   
-  if (!isNaN(hash)) {
+  if (hash && !isNaN(hash)) {
     window.scroll({top: Number(hash) })
   }
 }
