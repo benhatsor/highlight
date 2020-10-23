@@ -1,14 +1,11 @@
-const isFirefox = window.browser && browser.runtime;
-const theBrowser = isFirefox ? browser : chrome;
-
-theBrowser.tabs.onUpdated.addListener(function() {  
-  theBrowser.tabs.executeScript({
+browser.tabs.onUpdated.addListener(function() {  
+  browser.tabs.executeScript({
     code: `(${ scrollInContent })()`
   });
 })
 
-theBrowser.tabs.onActivated.addListener(function() {
-  theBrowser.browserAction.setIcon({path: 'icon.png'});
+browser.tabs.onActivated.addListener(function() {
+  browser.browserAction.setIcon({path: 'icon.png'});
 })
 
 function scrollInContent() {
