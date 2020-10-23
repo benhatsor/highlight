@@ -1,13 +1,17 @@
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener(function() {  
   chrome.tabs.executeScript({
     code: `(${ scrollInContent })()`
   });
 })
 
+chrome.tabs.onActivated.addListener(function() {
+  chrome.browserAction.setIcon({path: 'icon.png'});
+})
+
 function scrollInContent() {
-  var url = new URL(window.location.href);
-  var scroll = url.searchParams.get('scroll');
-  if (scroll) {
-    window.scroll({top: Number(scroll) })
+  var hash = window.location.hash.replace('#', '');
+  
+  if (!isNaN(hash)) {
+    window.scroll({top: Number(hash) })
   }
 }

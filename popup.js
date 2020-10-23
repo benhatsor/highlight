@@ -2,7 +2,7 @@ var destFolder, bookmarkBar, pageData;
 
 function inContent() {
     return {
-        title: document.title,
+        title: window.location.hostname,
         url: window.location.href,
         scrollPos: window.scrollY || window.pageYOffset
     };
@@ -33,7 +33,7 @@ function createBookmark(result) {
         chrome.bookmarks.create({
             'parentId': destFolder.id,
             'title': result.title,
-            'url': (result.url + '?scroll=' + result.scrollPos)
+            'url': (result.url + '#' + Math.round(result.scrollPos))
         });
     }
 }
@@ -86,7 +86,12 @@ chrome.tabs.executeScript({
 		})
 		
 		document.querySelector('.cancel').addEventListener('click', e => {
-		  window.close();
+		  chrome.browserAction.setIcon({path: 'icon.png'}, function() {
+		    window.close();
+		  });
 		})
     }
 });
+
+
+chrome.browserAction.setIcon({path: 'icon-on.png'});
