@@ -10,3 +10,5 @@ Works by saving your scroll position in the [fragment identifier](https://en.wik
 
 ## Contributing
 Help me improve it! If there's anything you think needs to be added, just add an [issue](https://github.com/barhatsor/smart-bookmark/issues/new). Pull requests are also welcome.
+
+This is the Chrome version. For the Firefox version, see [this branch](https://github.com/barhatsor/smart-bookmark/tree/firefox).
