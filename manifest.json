@@ -4,7 +4,7 @@
   },
   
   "browser_action": {
-    "default_title": "Bookmark",
+    "default_title": "Smart Bookmark",
     "default_popup": "popup.html"
   },
 
@@ -18,9 +18,9 @@
   "description": "Smart bookmark that saves your place in the page.",
 
   "permissions": [
-    "bookmark",
-    "*://*/*",
-    "webNavigation"
+    "bookmarks",
+    "webNavigation",
+	"*://*/*"
   ],
 
   "version": "1.0"

@@ -1,15 +1,17 @@
 <html>
     <head>
-    <script src="popup.js"></script>
+	  <script src="popup.js"></script>
+	  <link rel="stylesheet" href="popup.css">
     </head>
     <body>
       <h1>Smart Bookmark added</h1>
-      <p>Name</p>
-      <a class="title">Title</a>
+      <p class="name">Name</p>
+      <span class="title" contenteditable="true" spellcheck="false">Title</span>
       <p>URL</p>
       <a class="url">https://www.example.com/</a>
       <div class="buttons">
-        <div class="button" onclick="window.close()">Save</div>
+	    <div class="button cancel">Cancel</div>
+        <div class="button save">Save</div>
       </div>
     </body>
 </html>
