@@ -3,7 +3,7 @@ var destFolder, bookmarkBar, pageData;
 function inContent() {
     return {
         title: window.location.hostname,
-        url: window.location.href,
+        url: window.location.href.split('#')[0],
         scrollPos: window.scrollY || window.pageYOffset
     };
 }
@@ -26,7 +26,7 @@ function select(node) {
 function toggleBookmark() {
   browser.bookmarks.create({
     title: pageData.title,
-    url: pageData.url+'#'+pageData.scrollPos
+    url: pageData.url+'#'+Math.round(pageData.scrollPos)
   });
 }
 
