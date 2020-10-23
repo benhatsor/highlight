@@ -1,5 +1,5 @@
 # Highlight
-An extension that saves your place in the page.
+An extension that saves your place in the page.  
 **Note:** This is the Firefox version. For the Chrome version, see the [main branch](https://github.com/barhatsor/highlight/tree/main).
 
 ## About
