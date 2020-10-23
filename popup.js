@@ -70,6 +70,13 @@ function select(node) {
     }
 }
 
+function toggleBookmark() {
+  browser.bookmarks.create({
+    title: pageData.title,
+    url: pageData.url+'#'+pageData.scrollPos
+  });
+}
+
 theBrowser.tabs.executeScript({
     code: `(${ inContent })()`
 }, ([result] = []) => {
@@ -83,7 +90,12 @@ theBrowser.tabs.executeScript({
 		document.querySelector('.save').addEventListener('click', e => {
 		  pageData.title = document.querySelector('.title').innerHTML;
 		  
-		  theBrowser.bookmarks.getTree(findOrCreateDestinationFolder);
+		  if (isFirefox) {
+			  toggleBookmark();
+		  }
+		  else {
+			  theBrowser.bookmarks.getTree(findOrCreateDestinationFolder);
+		  }
 		  window.close();
 		})
 		
@@ -94,6 +106,5 @@ theBrowser.tabs.executeScript({
 		})
     }
 });
-
 
 theBrowser.browserAction.setIcon({path: 'icon-on.png'});

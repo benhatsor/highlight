@@ -11,8 +11,8 @@
   "commands": {
     "_execute_browser_action": {
 	  "suggested_key": {
-	    "default": "Ctrl+B",
-	    "mac": "MacCtrl+B"
+	    "default": "Ctrl+Alt+B",
+	    "mac": "MacCtrl+Alt+B"
 	  },
 	  "description": "Creates a smart bookmark."
     }
@@ -29,9 +29,8 @@
 
   "permissions": [
     "bookmarks",
-    "webNavigation",
-	"activeTab"
-  ],
+	"*://*/*"
+],
 
   "version": "0.0.1"
 }
