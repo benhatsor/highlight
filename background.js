@@ -1,11 +1,14 @@
-chrome.tabs.onUpdated.addListener(function() {  
-  chrome.tabs.executeScript({
+const isFirefox = window.browser && browser.runtime;
+const theBrowser = isFirefox ? browser : chrome;
+
+theBrowser.tabs.onUpdated.addListener(function() {  
+  theBrowser.tabs.executeScript({
     code: `(${ scrollInContent })()`
   });
 })
 
-chrome.tabs.onActivated.addListener(function() {
-  chrome.browserAction.setIcon({path: 'icon.png'});
+theBrowser.tabs.onActivated.addListener(function() {
+  theBrowser.browserAction.setIcon({path: 'icon.png'});
 })
 
 function scrollInContent() {
