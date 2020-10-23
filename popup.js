@@ -3,39 +3,20 @@ var destFolder, bookmarkBar, pageData;
 function inContent() {
     return {
         title: window.location.hostname,
-        url: window.location.href,
+        url: window.location.href.split('#')[0],
         scrollPos: window.scrollY || window.pageYOffset
     };
 }
 
 function findOrCreateDestinationFolder(rootNodes) {
-    var rootNode;
-    if (rootNodes.length > 0) {
-        rootNode = rootNodes[0];
-    }
-    destFolder = findBookmarksFolder(rootNode, "Smart Bookmarks");
-    if (!destFolder) {
-        bookmarkBar = findBookmarksFolder(rootNode, "Other bookmarks");
-        chrome.bookmarks.create({
-            parentId: bookmarkBar ? bookmarkBar.id : "1",
-            title: "Smart Bookmarks"
-        }, function(bmk) {
-            destFolder = bmk;
-            createBookmark(pageData);
-        });
-    } else {
-        createBookmark(pageData);
-    }
+	createBookmark(pageData);
 }
 
 function createBookmark(result) {
-    if (destFolder) {
-        chrome.bookmarks.create({
-            'parentId': destFolder.id,
-            'title': result.title,
-            'url': (result.url + '#' + Math.round(result.scrollPos))
-        });
-    }
+	chrome.bookmarks.create({
+		'title': result.title,
+		'url': (result.url + '#' + Math.round(result.scrollPos))
+	});
 }
 
 function findBookmarksFolder(rootNode, searchString) {
