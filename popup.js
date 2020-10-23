@@ -1,5 +1,3 @@
-const isFirefox = window.browser && browser.runtime;
-const theBrowser = isFirefox ? browser : chrome;
 var destFolder, bookmarkBar, pageData;
 
 function inContent() {
@@ -18,7 +16,7 @@ function findOrCreateDestinationFolder(rootNodes) {
     destFolder = findBookmarksFolder(rootNode, "Smart Bookmarks");
     if (!destFolder) {
         bookmarkBar = findBookmarksFolder(rootNode, "Other bookmarks");
-        theBrowser.bookmarks.create({
+        chrome.bookmarks.create({
             parentId: bookmarkBar ? bookmarkBar.id : "1",
             title: "Smart Bookmarks"
         }, function(bmk) {
@@ -32,7 +30,7 @@ function findOrCreateDestinationFolder(rootNodes) {
 
 function createBookmark(result) {
     if (destFolder) {
-        theBrowser.bookmarks.create({
+        chrome.bookmarks.create({
             'parentId': destFolder.id,
             'title': result.title,
             'url': (result.url + '#' + Math.round(result.scrollPos))
@@ -70,10 +68,10 @@ function select(node) {
     }
 }
 
-theBrowser.tabs.executeScript({
+chrome.tabs.executeScript({
     code: `(${ inContent })()`
 }, ([result] = []) => {
-    if (!theBrowser.runtime.lastError) {
+    if (!chrome.runtime.lastError) {
 		pageData = result;
 		
 		document.querySelector('.title').innerHTML = pageData.title;
@@ -83,12 +81,12 @@ theBrowser.tabs.executeScript({
 		document.querySelector('.save').addEventListener('click', e => {
 		  pageData.title = document.querySelector('.title').innerHTML;
 		  
-		  theBrowser.bookmarks.getTree(findOrCreateDestinationFolder);
+		  chrome.bookmarks.getTree(findOrCreateDestinationFolder);
 		  window.close();
 		})
 		
 		document.querySelector('.cancel').addEventListener('click', e => {
-		  theBrowser.browserAction.setIcon({path: 'icon.png'}, function() {
+		  chrome.browserAction.setIcon({path: 'icon.png'}, function() {
 		    window.close();
 		  });
 		})
@@ -96,4 +94,4 @@ theBrowser.tabs.executeScript({
 });
 
 
-theBrowser.browserAction.setIcon({path: 'icon-on.png'});
+chrome.browserAction.setIcon({path: 'icon-on.png'});
