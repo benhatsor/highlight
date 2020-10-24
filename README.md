@@ -1,5 +1,5 @@
-# smart-bookmark
-Smart bookmark extension that saves your place in the page.  
+# Highlight
+An extension that saves your place in the page.   
 **Note:** This is the Firefox version. For the Chrome version, see the [main](https://github.com/barhatsor/smart-bookmark/tree/main) branch.
 
 ## About
