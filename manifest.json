@@ -1,36 +1,36 @@
 {
-    "background": {
-        "scripts": ["background.js"]
-    },
+  "background": {
+    "scripts": ["background.js"]
+  },
 
-    "browser_action": {
-        "default_title": "Smart Bookmark",
-        "default_popup": "popup.html"
-    },
+  "browser_action": {
+    "default_title": "Highlight",
+    "default_popup": "popup.html"
+  },
 
-    "commands": {
-        "_execute_browser_action": {
-            "suggested_key": {
-                "default": "Ctrl+Alt+B",
-                "mac": "MacCtrl+Alt+B"
-            },
-            "description": "Creates a smart bookmark."
-        }
-    },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+B",
+        "mac": "MacCtrl+Alt+B"
+      },
+      "description": "Creates a Highlight."
+    }
+  },
 
-    "icons": {
-        "48": "icon.png",
-        "96": "icon@2x.png"
-    },
+  "icons": {
+    "48": "icon.png",
+    "96": "icon@2x.png"
+  },
 
-    "manifest_version": 2,
-    "name": "Smart Bookmark",
-    "description": "Smart bookmark that saves your place in the page.",
+  "manifest_version": 2,
+  "name": "Highlight",
+  "description": "An extension that saves your place in the page.",
 
-    "permissions": [
-        "bookmarks",
-        "*://*/*"
-    ],
+  "permissions": [
+    "bookmarks",
+    "*://*/*"
+  ],
 
-    "version": "0.0.5"
+  "version": "0.0.6"
 }
