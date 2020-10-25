@@ -1,5 +1,5 @@
 # Highlight <img src="icon.png" height="28">
-An extension that saves your place in the page.   
+An extension that saves your place in the page. [Firefox add-ons](https://addons.mozilla.org/en-US/firefox/addon/highlightapp)  
 **Note:** This is the Firefox version. For the Chrome version, see the [main](https://github.com/barhatsor/highlight/tree/main) branch.
 
 ## About
