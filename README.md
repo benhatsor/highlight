@@ -1,4 +1,4 @@
-# Highlight
+# Highlight <img src="icon.png" height="28">
 An extension that saves your place in the page.
 
 ## About 
