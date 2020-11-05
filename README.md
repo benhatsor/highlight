@@ -1,4 +1,4 @@
-# Highlight <img src="icon.png" height="28">
+# [Highlight](https://chrome.google.com/webstore/detail/highlight/lokgbeagjjdgpdfcgbafajfgbjiocjod)
 An extension that saves your place in the page.
 
 ## About 
