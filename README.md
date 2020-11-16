@@ -1,5 +1,5 @@
-# [Highlight](https://addons.mozilla.org/en-US/firefox/addon/highlightapp/)
-An extension that saves your place in the page.  
+# Highlight
+An extension that saves your place in the page. [Chrome Web Store](https://chrome.google.com/webstore/detail/highlight/lokgbeagjjdgpdfcgbafajfgbjiocjod) - [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/highlightapp)  
 **Note:** This is the Firefox version. For the Chrome version, see the [main](https://github.com/barhatsor/highlight/tree/main) branch.
 
 ## About
