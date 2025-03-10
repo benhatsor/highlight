@@ -1,0 +1,46 @@
+{
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_title": "Highlight",
+    "default_popup": "popup.html"
+  },
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      },
+      "description": "Creates a Highlight."
+    }
+  },
+
+  "icons": {
+    "96": "icon.png"
+  },
+
+  "manifest_version": 3,
+  "name": "Highlight",
+  "description": "An extension that saves your place in the page.",
+
+  "permissions": [
+    "bookmarks",
+    "scripting",
+    "activeTab"
+  ],
+
+  "version": "0.0.5"
+}
